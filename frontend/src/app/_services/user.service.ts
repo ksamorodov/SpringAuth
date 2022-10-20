@@ -12,10 +12,10 @@ export class UserService {
     }
 
     register(user: User) {
-        return this.http.post(`/api/users/register`, user);
+        return this.http.post(`/api/auth/register`, user);
     }
 
     delete(id: number) {
-        return this.http.delete(`/api/users/${id}`);
+        return this.http.delete(`/api/auth/delete-user?id=${id}`);
     }
 }

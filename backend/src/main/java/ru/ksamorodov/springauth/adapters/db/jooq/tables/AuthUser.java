@@ -11,7 +11,7 @@ import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row6;
+import org.jooq.Row7;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -58,11 +58,6 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
     public final TableField<AuthUserRecord, String> USERNAME = createField(DSL.name("username"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>public.auth_user.email</code>.
-     */
-    public final TableField<AuthUserRecord, String> EMAIL = createField(DSL.name("email"), SQLDataType.VARCHAR(255).nullable(false), this, "");
-
-    /**
      * The column <code>public.auth_user.password_hash</code>.
      */
     public final TableField<AuthUserRecord, String> PASSWORD_HASH = createField(DSL.name("password_hash"), SQLDataType.VARCHAR(255), this, "");
@@ -76,6 +71,16 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
      * The column <code>public.auth_user.created_at</code>.
      */
     public final TableField<AuthUserRecord, LocalDateTime> CREATED_AT = createField(DSL.name("created_at"), SQLDataType.LOCALDATETIME(6), this, "");
+
+    /**
+     * The column <code>public.auth_user.first_name</code>.
+     */
+    public final TableField<AuthUserRecord, String> FIRST_NAME = createField(DSL.name("first_name"), SQLDataType.VARCHAR(50), this, "");
+
+    /**
+     * The column <code>public.auth_user.last_name</code>.
+     */
+    public final TableField<AuthUserRecord, String> LAST_NAME = createField(DSL.name("last_name"), SQLDataType.VARCHAR(50), this, "");
 
     private AuthUser(Name alias, Table<AuthUserRecord> aliased) {
         this(alias, aliased, null);
@@ -147,11 +152,11 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row6 type methods
+    // Row7 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row6<UUID, String, String, String, String, LocalDateTime> fieldsRow() {
-        return (Row6) super.fieldsRow();
+    public Row7<UUID, String, String, String, LocalDateTime, String, String> fieldsRow() {
+        return (Row7) super.fieldsRow();
     }
 }
