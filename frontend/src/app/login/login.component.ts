@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
                     this.alertService.success("You are logged now");
                 },
                 error => {
-                    this.alertService.error(error);
+                    this.alertService.error("Invalid login or password");
                     this.loading = false;
                 });
     }

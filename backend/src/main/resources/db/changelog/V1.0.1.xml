@@ -9,4 +9,8 @@
         <sqlFile path="/sql/01_create_table_user.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="2022-10-20 20:11:00" author="ksamorodov">
+        <sqlFile path="/sql/02_fio_in_table_user.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
