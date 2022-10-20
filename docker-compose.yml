@@ -1,0 +1,23 @@
+volumes:
+  pg_project:
+  pg_lots:
+
+services:
+  pg_db:
+    image: postgres:12.7-alpine
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=simple_auth
+      - POSTGRES_USER=simple_auth
+      - POSTGRES_DB=simple_auth
+    volumes:
+      - pg_project:/var/lib/postgresql/data
+    ports:
+      - 5100:5432
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - 80:80

@@ -1,0 +1,642 @@
+2022-10-21 00:00:48.310 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:00:48.773 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:11:57.870 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:11:57.875 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:12:11.302 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 66113 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:12:11.306 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:12:13.221 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:12:13.222 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:12:13.223 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:12:13.406 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:12:13.949 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:12:14.115 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:12:14.279 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:12:14.399 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:12:14.908 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:12:14.995 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:12:16.628 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:12:16.666 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.226 seconds (JVM running for 8.969)
+2022-10-21 00:12:28.517 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:12:28.804 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:17:47.186 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:17:47.192 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:17:54.189 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67110 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:17:54.195 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:17:56.060 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:17:56.061 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:17:56.062 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:17:56.198 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:17:56.749 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:17:56.882 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:17:57.105 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:17:57.278 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:17:57.820 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:17:57.903 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:17:59.706 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:17:59.741 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.143 seconds (JVM running for 7.623)
+2022-10-21 00:18:16.642 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:18:16.648 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:18:23.543 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67152 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:18:23.549 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:18:25.792 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:18:25.793 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:18:25.794 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:18:25.962 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:18:26.508 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:18:26.634 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:18:26.801 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:18:26.917 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:18:27.489 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:18:27.575 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:18:29.169 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:18:29.205 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.431 seconds (JVM running for 7.819)
+2022-10-21 00:18:35.811 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:18:35.815 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:18:42.271 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67177 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:18:42.283 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:18:43.796 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:18:43.797 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:18:43.797 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:18:43.995 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:18:44.542 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:18:44.676 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:18:44.798 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:18:44.918 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:18:45.431 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:18:45.500 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:18:47.097 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:18:47.132 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.467 seconds (JVM running for 6.778)
+2022-10-21 00:19:00.115 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:19:00.411 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:22:31.864 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:22:31.876 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:22:39.277 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67446 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:22:39.282 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:22:40.780 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:22:40.781 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:22:40.781 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:22:41.001 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:22:41.787 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:22:41.937 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:22:42.122 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:22:42.251 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:22:42.770 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:22:42.857 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:22:44.700 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:22:44.730 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.036 seconds (JVM running for 6.988)
+2022-10-21 00:23:37.032 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:23:37.352 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:23:38.316 [ERROR] [http-nio-8080-exec-3]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class ru.ksamorodov.springauth.application.dao.UserPrincipal$Authority]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class ru.ksamorodov.springauth.application.dao.UserPrincipal$Authority and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: ru.ksamorodov.springauth.application.dao.UserPrincipal["authority"])] with root cause
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class ru.ksamorodov.springauth.application.dao.UserPrincipal$Authority and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: ru.ksamorodov.springauth.application.dao.UserPrincipal["authority"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
+	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1300)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:46)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:29)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:728)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:774)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1518)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1007)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:456)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:219)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:135)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:106)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:97)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-10-21 00:24:08.899 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:24:08.906 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:24:15.235 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67497 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:24:15.240 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:24:16.799 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:24:16.800 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:24:16.801 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:24:16.949 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:24:17.749 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:24:18.297 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:24:18.549 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:24:18.720 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:24:19.376 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:24:19.460 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:24:21.008 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:24:21.039 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.371 seconds (JVM running for 7.282)
+2022-10-21 00:24:38.883 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:24:39.166 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:29:37.386 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:29:37.396 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:29:44.643 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67651 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:29:44.647 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:29:46.185 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:29:46.186 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:29:46.186 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:29:46.326 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:29:46.937 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:29:47.064 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:29:47.217 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:29:47.335 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:29:47.843 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:29:47.936 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:29:49.478 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:29:49.506 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.496 seconds (JVM running for 6.408)
+2022-10-21 00:30:00.187 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:30:00.476 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:33:16.453 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:33:16.461 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:33:22.392 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67801 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:33:22.401 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:33:24.011 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:33:24.012 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:33:24.012 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:33:24.152 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:33:24.740 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:33:24.867 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:33:25.026 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:33:25.140 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:33:25.621 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:33:25.696 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:33:27.232 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:33:27.264 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.511 seconds (JVM running for 6.453)
+2022-10-21 00:33:30.991 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:33:38.012 [INFO] [http-nio-8080-exec-2]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:41:58.132 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:41:58.142 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:42:04.611 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 68114 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:42:04.622 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:42:06.983 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:42:06.984 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:42:06.985 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:42:07.161 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:42:07.761 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:42:07.918 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:42:08.076 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:42:08.193 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:42:08.685 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:42:08.758 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:42:10.291 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:42:10.326 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 7.039 seconds (JVM running for 8.743)
+2022-10-21 00:42:13.706 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:42:13.977 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:43:11.126 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:43:11.137 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
+2022-10-21 00:43:16.410 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 68159 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+2022-10-21 00:43:16.417 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+2022-10-21 00:43:18.054 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:43:18.055 [INFO] [main]
+				[org.apache.catalina.core.StandardService:173] Starting service [Tomcat]
+2022-10-21 00:43:18.055 [INFO] [main]
+				[org.apache.catalina.core.StandardEngine:173] Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-10-21 00:43:18.232 [INFO] [main]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring embedded WebApplicationContext
+2022-10-21 00:43:18.779 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:110] HikariPool-1 - Starting...
+2022-10-21 00:43:18.906 [INFO] [main]
+				[com.zaxxer.hikari.HikariDataSource:123] HikariPool-1 - Start completed.
+2022-10-21 00:43:19.052 [INFO] [main]
+				[liquibase.database:30] Set default schema name to public
+2022-10-21 00:43:19.197 [INFO] [main]
+				[liquibase.lockservice:30] Successfully acquired change log lock
+2022-10-21 00:43:19.708 [INFO] [main]
+				[liquibase.changelog:30] Reading from public.databasechangelog
+2022-10-21 00:43:19.799 [INFO] [main]
+				[liquibase.lockservice:30] Successfully released change log lock
+2022-10-21 00:43:21.421 [INFO] [main]
+				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-21 00:43:21.450 [INFO] [main]
+				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.81 seconds (JVM running for 7.525)
+2022-10-21 00:43:32.780 [INFO] [http-nio-8080-exec-1]
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-21 00:43:33.057 [INFO] [http-nio-8080-exec-1]
+				[org.jooq.Constants:312] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
+                                      
+2022-10-21 00:53:12.294 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
+2022-10-21 00:53:12.308 [INFO] [SpringApplicationShutdownHook]
+				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
