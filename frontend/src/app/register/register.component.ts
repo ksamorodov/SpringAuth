@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
 
 import { AlertService, UserService, AuthenticationService } from '../_services';
 
@@ -10,6 +9,7 @@ export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
+    // enablePasswordValidation = false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -17,19 +17,20 @@ export class RegisterComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private userService: UserService,
         private alertService: AlertService
-    ) { 
+    ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
-            this.router.navigate(['/']);
-        }
+        // if (this.authenticationService.currentUserValue.role !== 'ADMIN') {
+        //     this.router.navigate(['/']);
+        // }
     }
+
+    // setPasswordValidation() {
+    //     this.enablePasswordValidation = !this.enablePasswordValidation
+    // }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            username: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            username: ['', Validators.required]
         });
     }
 
@@ -39,21 +40,18 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
-
         this.loading = true;
-        this.userService.register(this.registerForm.value)
+        this.userService.register(this.registerForm.controls.username.value)
             .subscribe(
                 () => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
+                    this.loading = false;
+                    this.alertService.success('Пользователь успешно добавлен', true);
                 },
                 error => {
-                    this.alertService.error("This username exists");
+                    this.alertService.error("Имя пользователя уже занято");
                     this.loading = false;
                 });
     }
+
+
 }

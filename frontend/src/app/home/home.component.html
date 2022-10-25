@@ -1,10 +1,50 @@
-<h1>Hi, {{currentUser.firstName}}!</h1>
-<p>You're logged</p>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.lastName}}{{' '}}{{user.firstName}})
-        -
-        <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
+<div *ngIf="currentUser && currentUser.temporaryPassword == false">
+    <h1>Ваш логин: {{currentUser.username}}!</h1>
+    <p>Вы вошли в систему</p>
+    <h3 *ngIf="currentUser.role === 'ADMIN'">Список пользователей:</h3>
+    <ul *ngIf="currentUser.role === 'ADMIN'">
+        <li *ngFor="let user of users">
+            <a *ngIf="user.role === 'ADMIN'" class="text-warning"> {{user.username}} </a>
+            <a *ngIf="user.role === 'USER' && currentUser.blockedAt == null" class="user"> {{user.username}} </a>
+            <a *ngIf="user.role === 'USER' && currentUser.blockedAt != null" class="blocked-user"> {{user.username}} </a>
+            -
+            <a *ngIf="user.role === 'USER' && user.blockedAt == true" class="text-danger"> (Заблокирован) {{" | "}}</a>
+            <a (click)="deleteUser(user.id)" *ngIf="user.role === 'USER'" class="text-danger"> 🗑 {{" | "}}</a>
+            <a *ngIf="user.role === 'USER' && user.blockedAt == false" (click)="blockUser(user.id)" class="text-danger"> 🚫{{" | "}}</a>
+            <a *ngIf="user.role === 'USER' && user.blockedAt == true" (click)="unblockUser(user.id)" class="text-danger"> 🔙 {{" | "}}</a>
+            <a *ngIf="user.role === 'USER'" (click)="changePassword(user)" class="text-danger">🔑 {{" | "}}</a>
+            <a *ngIf="user.role === 'USER' && user.blockedAt == false" (click)="setValidPassword(user.id, !user.validPassword)" class="text-danger">Ограничение пароля: {{ isValidationOfPasswordEnabled(user.validPassword) }}</a>
+        </li>
+    </ul>
+
+    <a (click)="changePassword(currentUser)" class="text-danger">Изменить свой пароль</a>
+
+</div>
+
+<div *ngIf="isPasswordChangerOpened || currentUser.temporaryPassword == true">
+    <h1 *ngIf="currentUser.temporaryPassword == true"> Необходимо сменить временный пароль! </h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group" *ngIf="currentUser.temporaryPassword == false">
+            <label for="oldPassword" >Старый пароль</label>
+            <input type="password" formControlName="oldPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.oldPassword.errors }" />
+        </div>
+        <div class="form-group">
+            <label for="password">Введите новый пароль</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        </div>
+        <div>
+            <label for="repeatPassword">Повторите новый пароль</label>
+            <input type="password" formControlName="repeatPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.repeatPassword.errors }" />
+        </div>
+        <!--    <a>Enable password validator {{" "}}</a>-->
+        <!--    <input type="checkbox" checked="{{setPasswordValidation()}}" />-->
+        <div class="form-group">
+            <button [disabled]="loading || !hasDuplicateSymbols" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Изменить пароль
+            </button>
+            <a routerLink="/login" class="btn btn-link">Закрыть</a>
+        </div>
+    </form>
+</div>
+

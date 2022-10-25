@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -17,17 +19,27 @@ import java.util.UUID;
 public class UserPrincipal implements UserDetails {
     private UUID id;
     private String username;
-    private String firstName;
-    private String lastName;
     private String password;
+    private String passwordHash;
+    private boolean blockedAt;
+    private BigDecimal wrongLoginCount;
+    private boolean isValidPassword;
+    private boolean isTemporaryPassword;
+    private Role role;
 
     @JsonIgnore
-    private Authority authority = new Authority();
+    private Authority authority = new Authority(role);
 
     public static class Authority implements GrantedAuthority {
+        private Role role;
+
+        Authority(Role role) {
+            super();
+            this.role = role;
+        }
         @Override
         public String getAuthority() {
-            return "Admin";
+            return role.toString();
         }
     }
     @Override
@@ -55,7 +67,7 @@ public class UserPrincipal implements UserDetails {
     @Override
     @JsonIgnore
     public boolean isAccountNonLocked() {
-        return true;
+        return blockedAt == false;
     }
 
     @Override

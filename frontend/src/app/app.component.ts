@@ -19,4 +19,12 @@ export class AppComponent {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
     }
+
+    addUser() {
+        this.router.navigate(['/register']);
+    }
+
+    about() {
+        this.router.navigate(['/about']);
+    }
 }

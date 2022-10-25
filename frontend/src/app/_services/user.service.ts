@@ -11,11 +11,23 @@ export class UserService {
         return this.http.get<User[]>(`/api/auth/all-users`);
     }
 
-    register(user: User) {
-        return this.http.post(`/api/auth/register`, user);
+    register(username) {
+        return this.http.post(`/api/auth/register?username=` + username, {});
+    }
+
+    changePassword(id, password) {
+        return this.http.post(`/api/auth/change-password?id=` + id, password);
     }
 
     delete(id: number) {
         return this.http.delete(`/api/auth/delete-user?id=${id}`);
+    }
+
+    block(id: number) {
+        return this.http.put(`/api/auth/block-user?id=${id}`, "");
+    }
+
+    unblock(id: number) {
+        return this.http.put(`/api/auth/unblock-user?id=${id}`, "");
     }
 }

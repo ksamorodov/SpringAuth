@@ -1,0 +1,11 @@
+.admin {
+    color: green;
+}
+
+.user {
+    color: blue;
+}
+
+.blocked-user {
+    color: red;
+}

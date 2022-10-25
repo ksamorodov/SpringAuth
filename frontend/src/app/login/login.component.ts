@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
-            password: ['', Validators.required]
+            password: ['', []]
         });
 
         // get return url from route parameters or default to '/'
@@ -48,16 +48,18 @@ export class LoginComponent implements OnInit {
         }
 
         this.loading = true;
-        this.authenticationService.login(this.f.username.value, this.f.password.value)
-            .pipe(first())
-            .subscribe(
-                data => {
-                    this.loading = false;
-                    this.alertService.success("You are logged now");
-                },
-                error => {
-                    this.alertService.error("Invalid login or password");
-                    this.loading = false;
-                });
+        this.authenticationService.addConnection().subscribe(() => {
+            this.authenticationService.login(this.f.username.value, this.f.password.value)
+                .pipe(first())
+                .subscribe(
+                    data => {
+                        this.loading = false;
+                        this.alertService.success("Вы вошли в аккаунт");
+                    },
+                    error => {
+                        this.alertService.error("Неправильный логин или пароль");
+                        this.loading = false;
+                    });
+        });
     }
 }

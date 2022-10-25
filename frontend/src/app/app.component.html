@@ -1,8 +1,10 @@
 <!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
     <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        <a class="nav-item nav-link" routerLink="/">Домой</a>
+        <a class="nav-item nav-link" (click)="logout()">Выйти</a>
+        <a class="nav-item nav-link" *ngIf="currentUser.role === 'ADMIN' && currentUser.temporaryPassword == false" (click)="addUser()">Добавить нового пользователя</a>
+        <a class="nav-item nav-link" (click)="about()">О программе</a>
     </div>
 </nav>
 

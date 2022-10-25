@@ -19,6 +19,10 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
+    setValidationPasswordEnabled(id, value) {
+        return this.http.get<any>('/api/auth/set-validation-password?id=' + id + '&value=' + value);
+    }
+
     login(username: string, password: string) {
         const body = new HttpParams()
             .set('username', username)
@@ -28,6 +32,21 @@ export class AuthenticationService {
                 this.loggedIn().subscribe(user => {
                         localStorage.setItem('currentUser', JSON.stringify(user));
                         this.currentUserSubject.next(user);
+                    }
+                )
+            }));
+    }
+
+    addConnection() {
+        return this.http.get<any>('/api/auth/get-connection')
+    }
+
+    checkLogin(password: string) {
+        return this.http.post<any>('/api/auth/check-old-password', password)
+            .pipe(map(() => {
+                this.loggedIn().subscribe(user => {
+                        // localStorage.setItem('currentUser', JSON.stringify(user));
+                        // this.currentUserSubject.next(user);
                     }
                 )
             }));

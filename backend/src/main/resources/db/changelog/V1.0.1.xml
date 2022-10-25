@@ -13,4 +13,24 @@
         <sqlFile path="/sql/02_fio_in_table_user.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="2022-10-22 20:11:00" author="ksamorodov">
+        <sqlFile path="/sql/03_add_roles.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2022-10-25 12:25:00" author="ksamorodov">
+        <sqlFile path="/sql/04_temporary password.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2022-10-25 12:48:00" author="ksamorodov">
+        <sqlFile path="/sql/05_delete_unused_column.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2022-10-25 16:35:00" author="ksamorodov">
+        <sqlFile path="/sql/06_delete_unused_column_and_set_datatype.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2022-10-25 17:35:00" author="ksamorodov">
+        <sqlFile path="/sql/07_wrong_login_count.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
