@@ -21,6 +21,7 @@ public class UserPrincipal implements UserDetails {
     private String lastName;
     private String password;
 
+
     @JsonIgnore
     private Authority authority = new Authority();
 
