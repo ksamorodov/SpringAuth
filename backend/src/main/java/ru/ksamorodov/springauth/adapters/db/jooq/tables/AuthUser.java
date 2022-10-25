@@ -4,14 +4,14 @@
 package ru.ksamorodov.springauth.adapters.db.jooq.tables;
 
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row10;
+import org.jooq.Row9;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -68,34 +68,29 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
     public final TableField<AuthUserRecord, String> PASSWORD_RESET_TOKEN = createField(DSL.name("password_reset_token"), SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>public.auth_user.created_at</code>.
-     */
-    public final TableField<AuthUserRecord, LocalDateTime> CREATED_AT = createField(DSL.name("created_at"), SQLDataType.LOCALDATETIME(6), this, "");
-
-    /**
-     * The column <code>public.auth_user.first_name</code>.
-     */
-    public final TableField<AuthUserRecord, String> FIRST_NAME = createField(DSL.name("first_name"), SQLDataType.VARCHAR(50), this, "");
-
-    /**
-     * The column <code>public.auth_user.last_name</code>.
-     */
-    public final TableField<AuthUserRecord, String> LAST_NAME = createField(DSL.name("last_name"), SQLDataType.VARCHAR(50), this, "");
-
-    /**
      * The column <code>public.auth_user.role</code>.
      */
     public final TableField<AuthUserRecord, String> ROLE = createField(DSL.name("role"), SQLDataType.VARCHAR(50).nullable(false), this, "");
 
     /**
-     * The column <code>public.auth_user.blocked_at</code>.
-     */
-    public final TableField<AuthUserRecord, LocalDateTime> BLOCKED_AT = createField(DSL.name("blocked_at"), SQLDataType.LOCALDATETIME(6), this, "");
-
-    /**
      * The column <code>public.auth_user.is_valid_password</code>.
      */
     public final TableField<AuthUserRecord, Boolean> IS_VALID_PASSWORD = createField(DSL.name("is_valid_password"), SQLDataType.BOOLEAN, this, "");
+
+    /**
+     * The column <code>public.auth_user.is_temporary_password</code>.
+     */
+    public final TableField<AuthUserRecord, Boolean> IS_TEMPORARY_PASSWORD = createField(DSL.name("is_temporary_password"), SQLDataType.BOOLEAN.defaultValue(DSL.field("true", SQLDataType.BOOLEAN)), this, "");
+
+    /**
+     * The column <code>public.auth_user.blocked_at</code>.
+     */
+    public final TableField<AuthUserRecord, Boolean> BLOCKED_AT = createField(DSL.name("blocked_at"), SQLDataType.BOOLEAN.defaultValue(DSL.field("false", SQLDataType.BOOLEAN)), this, "");
+
+    /**
+     * The column <code>public.auth_user.wrong_login_count</code>.
+     */
+    public final TableField<AuthUserRecord, BigDecimal> WRONG_LOGIN_COUNT = createField(DSL.name("wrong_login_count"), SQLDataType.NUMERIC.defaultValue(DSL.field("0", SQLDataType.NUMERIC)), this, "");
 
     private AuthUser(Name alias, Table<AuthUserRecord> aliased) {
         this(alias, aliased, null);
@@ -167,11 +162,11 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row10 type methods
+    // Row9 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row10<UUID, String, String, String, LocalDateTime, String, String, String, LocalDateTime, Boolean> fieldsRow() {
-        return (Row10) super.fieldsRow();
+    public Row9<UUID, String, String, String, String, Boolean, Boolean, Boolean, BigDecimal> fieldsRow() {
+        return (Row9) super.fieldsRow();
     }
 }

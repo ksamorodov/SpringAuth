@@ -6,7 +6,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import ru.ksamorodov.springauth.application.dao.Role;
 import ru.ksamorodov.springauth.application.dao.UserPrincipal;
+import ru.ksamorodov.springauth.application.service.FileUtilService;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -21,39 +23,82 @@ public class UserRepository {
     private final DSLContext dsl;
 
     public Optional<UserPrincipal> findByUsername(String username) {
-        return dsl.select(AUTH_USER.ID, AUTH_USER.USERNAME, AUTH_USER.FIRST_NAME, AUTH_USER.LAST_NAME, AUTH_USER.PASSWORD_HASH.as("password"), AUTH_USER.ROLE, AUTH_USER.BLOCKED_AT).from(AUTH_USER)
+        wrongLogin(username);
+        Optional<UserPrincipal> byUsername = dsl.select(AUTH_USER.ID, AUTH_USER.USERNAME, AUTH_USER.PASSWORD_HASH.as("password"), AUTH_USER.ROLE, AUTH_USER.IS_TEMPORARY_PASSWORD, AUTH_USER.IS_VALID_PASSWORD, AUTH_USER.BLOCKED_AT).from(AUTH_USER)
                 .where(AUTH_USER.USERNAME.eq(username)).fetchOptionalInto(UserPrincipal.class);
+        FileUtilService.write(getAllUsers());
+
+        return byUsername;
     }
 
     public List<UserPrincipal> getAllUsers() {
-        return dsl.select(AUTH_USER.ID, AUTH_USER.USERNAME, AUTH_USER.FIRST_NAME, AUTH_USER.LAST_NAME, AUTH_USER.ROLE, AUTH_USER.BLOCKED_AT, AUTH_USER.IS_VALID_PASSWORD).from(AUTH_USER)
-                .fetchInto(UserPrincipal.class);
+        return dsl.select(AUTH_USER.ID, AUTH_USER.WRONG_LOGIN_COUNT, AUTH_USER.USERNAME, AUTH_USER.PASSWORD_HASH,  AUTH_USER.ROLE, AUTH_USER.BLOCKED_AT, AUTH_USER.IS_VALID_PASSWORD, AUTH_USER.IS_TEMPORARY_PASSWORD, AUTH_USER.WRONG_LOGIN_COUNT).from(AUTH_USER).fetchInto(UserPrincipal.class);
     }
 
+    public void insertAllUsers(List<UserPrincipal> users) {
+        dsl.deleteFrom(AUTH_USER).execute();
+        users.forEach(user -> dsl.insertInto(AUTH_USER)
+                .set(AUTH_USER.ID, user.getId())
+                .set(AUTH_USER.USERNAME, user.getUsername())
+                .set(AUTH_USER.PASSWORD_HASH, user.getPasswordHash())
+                .set(AUTH_USER.ROLE, user.getRole().toString())
+                .set(AUTH_USER.BLOCKED_AT, user.isBlockedAt())
+                .set(AUTH_USER.WRONG_LOGIN_COUNT, user.getWrongLoginCount())
+                .set(AUTH_USER.IS_VALID_PASSWORD, user.isValidPassword())
+                .set(AUTH_USER.IS_TEMPORARY_PASSWORD, user.isTemporaryPassword()).execute());
+    }
+
+    public boolean checkOldPassword(String username, String password) {
+        Optional<UserPrincipal> byUsername = findByUsername(username);
+
+        if (byUsername.isPresent()) {
+            return passwordEncoder.matches(password, byUsername.get().getPassword());
+        } else {
+            return false;
+        }
+    }
 
     public int deleteUser(UUID id) {
-        return dsl.deleteFrom(AUTH_USER).where(AUTH_USER.ID.eq(id)).execute();
+        int execute = dsl.deleteFrom(AUTH_USER).where(AUTH_USER.ID.eq(id)).execute();
+        FileUtilService.write(getAllUsers());
+        return execute;
     }
 
-    public int register(UserPrincipal user) {
-        return dsl.insertInto(AUTH_USER)
+    public int register(String username) {
+        int execute = dsl.insertInto(AUTH_USER)
                 .set(AUTH_USER.ID, UUID.randomUUID())
-                .set(AUTH_USER.USERNAME, user.getUsername())
-                .set(AUTH_USER.FIRST_NAME, user.getFirstName())
-                .set(AUTH_USER.LAST_NAME, user.getLastName())
-                .set(AUTH_USER.CREATED_AT, LocalDateTime.now())
-                .set(AUTH_USER.ROLE, Role.USER.toString())
-                .set(AUTH_USER.PASSWORD_HASH, passwordEncoder.encode(user.getPassword())).execute();
+                .set(AUTH_USER.USERNAME, username)
+                .set(AUTH_USER.IS_VALID_PASSWORD, true)
+                .set(AUTH_USER.PASSWORD_HASH, passwordEncoder.encode(""))
+                .set(AUTH_USER.ROLE, Role.USER.toString()).execute();
+
+        FileUtilService.write(getAllUsers());
+
+        return execute;
     }
 
     public void blockUser(UUID id) {
         dsl.update(AUTH_USER)
-                .set(AUTH_USER.BLOCKED_AT, LocalDateTime.now()).where(AUTH_USER.ID.eq(id)).execute();
+                .set(AUTH_USER.BLOCKED_AT, true).where(AUTH_USER.ID.eq(id)).execute();
+        FileUtilService.write(getAllUsers());
+    }
+
+    public void blockUser(String username) {
+        dsl.update(AUTH_USER)
+                .set(AUTH_USER.BLOCKED_AT, true).where(AUTH_USER.USERNAME.eq(username)).execute();
+        FileUtilService.write(getAllUsers());
     }
 
     public void unblockUser(UUID id) {
         dsl.update(AUTH_USER)
-                .set(AUTH_USER.BLOCKED_AT, (LocalDateTime) null).where(AUTH_USER.ID.eq(id)).execute();
+                .set(AUTH_USER.BLOCKED_AT, false).where(AUTH_USER.ID.eq(id)).execute();
+        FileUtilService.write(getAllUsers());
+    }
+
+    public void setValidationPassword(UUID id, boolean value) {
+        dsl.update(AUTH_USER)
+                .set(AUTH_USER.IS_VALID_PASSWORD, value).where(AUTH_USER.ID.eq(id)).execute();
+        FileUtilService.write(getAllUsers());
     }
 
     public void setPassword(UUID id, String password) {
@@ -62,8 +107,28 @@ public class UserRepository {
             pass = passwordEncoder.encode(password);
         }
         dsl.update(AUTH_USER)
-                .set(AUTH_USER.PASSWORD_HASH, (String) pass).where(AUTH_USER.ID.eq(id))
+                .set(AUTH_USER.PASSWORD_HASH, (String) pass)
+                .set(AUTH_USER.IS_TEMPORARY_PASSWORD, false)
+                .where(AUTH_USER.ID.eq(id))
                 .execute();
+        FileUtilService.write(getAllUsers());
+    }
+
+    public void wrongLogin(String username) {
+        BigDecimal value = dsl.select(AUTH_USER.WRONG_LOGIN_COUNT).from(AUTH_USER).where(AUTH_USER.USERNAME.eq(username)).fetchOneInto(BigDecimal.class);
+        if (value == null) {
+            value = BigDecimal.ZERO;
+        }
+        if (value.compareTo(BigDecimal.valueOf(3)) < 0) {
+            value = value.add(BigDecimal.ONE);
+        } else {
+            blockUser(username);
+        }
+        dsl.update(AUTH_USER).set(AUTH_USER.WRONG_LOGIN_COUNT, value).where(AUTH_USER.USERNAME.eq(username)).execute();
+    }
+
+    public void successLogin(String username) {
+        dsl.update(AUTH_USER).set(AUTH_USER.WRONG_LOGIN_COUNT, BigDecimal.ZERO).where(AUTH_USER.USERNAME.eq(username)).execute();
     }
 
 }

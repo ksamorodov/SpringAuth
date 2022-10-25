@@ -23,4 +23,8 @@ export class AppComponent {
     addUser() {
         this.router.navigate(['/register']);
     }
+
+    about() {
+        this.router.navigate(['/about']);
+    }
 }

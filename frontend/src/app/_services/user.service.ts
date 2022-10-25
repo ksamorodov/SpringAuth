@@ -11,8 +11,8 @@ export class UserService {
         return this.http.get<User[]>(`/api/auth/all-users`);
     }
 
-    register(user: User) {
-        return this.http.post(`/api/auth/register`, user);
+    register(username) {
+        return this.http.post(`/api/auth/register?username=` + username, {});
     }
 
     changePassword(id, password) {

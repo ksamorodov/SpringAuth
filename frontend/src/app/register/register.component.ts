@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
 
 import { AlertService, UserService, AuthenticationService } from '../_services';
 
@@ -20,9 +19,9 @@ export class RegisterComponent implements OnInit {
         private alertService: AlertService
     ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue.role !== 'ADMIN') {
-            this.router.navigate(['/']);
-        }
+        // if (this.authenticationService.currentUserValue.role !== 'ADMIN') {
+        //     this.router.navigate(['/']);
+        // }
     }
 
     // setPasswordValidation() {
@@ -31,17 +30,9 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            firstName: ['', ],
-            lastName: ['', ],
-            username: ['', Validators.required],
-            password: ['', []]
+            username: ['', Validators.required]
         });
     }
-
-    hasDuplicateSymbols(str) {
-        return new Set(str.toLocaleLowerCase()).size !== [...str].length;
-    }
-
 
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
@@ -49,21 +40,15 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // stop here if form is invalid
-        if (this.registerForm.invalid || this.hasDuplicateSymbols(this.registerForm.controls.password.value)) {
-            this.alertService.error("Duplicate password");
-            return;
-        }
-
         this.loading = true;
-        this.userService.register(this.registerForm.value)
+        this.userService.register(this.registerForm.controls.username.value)
             .subscribe(
                 () => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
+                    this.loading = false;
+                    this.alertService.success('Пользователь успешно добавлен', true);
                 },
                 error => {
-                    this.alertService.error("This username exists");
+                    this.alertService.error("Имя пользователя уже занято");
                     this.loading = false;
                 });
     }

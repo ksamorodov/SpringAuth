@@ -1,5 +1,8 @@
 package ru.ksamorodov.springauth.application.configuration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +28,13 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import ru.ksamorodov.springauth.application.dao.UserPrincipal;
 import ru.ksamorodov.springauth.application.repository.UserRepository;
+import ru.ksamorodov.springauth.application.service.FileUtilService;
 
+import java.io.File;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
@@ -63,6 +71,25 @@ public class WebSecurityConfig {
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
+
+            List<UserPrincipal> read = FileUtilService.read();
+            if (read.isEmpty()) {
+                String json = "[ {\n" +
+                        "  \"id\" : \"d81827e3-ff51-4419-bbad-950ab7d7e7fd\",\n" +
+                        "  \"username\" : \"admin\",\n" +
+                        "  \"password\" : null,\n" +
+                        "  \"passwordHash\" : \"$2a$10$qnfz5DIUih2sBDP8OxQXq.2/PCwUHVQ/0sLlCf7.EO1iSmTA0fuem\",\n" +
+                        "  \"blockedAt\" : false,\n" +
+                        "  \"wrongLoginCount\" : 0,\n" +
+                        "  \"role\" : \"ADMIN\",\n" +
+                        "  \"validPassword\" : false,\n" +
+                        "  \"temporaryPassword\" : true\n" +
+                        "} ]";
+                FileUtils.writeStringToFile(new File("db.txt"), json, "UTF-8");
+            } else {
+                userRepository.insertAllUsers(read);
+            }
+
             http
                     .authorizeRequests()
                     .antMatchers("/**").permitAll()
@@ -88,6 +115,9 @@ public class WebSecurityConfig {
             http.formLogin()
                     .loginProcessingUrl("/auth/login")
                     .successHandler((request, response, authentication) -> {
+                        userRepository.successLogin(authentication.getName());
+
+                        FileUtilService.write(userRepository.getAllUsers());
                         response.setContentType("application/json;charset=UTF-8");
                         response.getWriter().println("{}");
                     })
