@@ -10,6 +10,7 @@ export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
+    // enablePasswordValidation = false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -17,21 +18,30 @@ export class RegisterComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private userService: UserService,
         private alertService: AlertService
-    ) { 
+    ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
+        if (this.authenticationService.currentUserValue.role !== 'ADMIN') {
             this.router.navigate(['/']);
         }
     }
 
+    // setPasswordValidation() {
+    //     this.enablePasswordValidation = !this.enablePasswordValidation
+    // }
+
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
+            firstName: ['', ],
+            lastName: ['', ],
             username: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            password: ['', []]
         });
     }
+
+    hasDuplicateSymbols(str) {
+        return new Set(str.toLocaleLowerCase()).size !== [...str].length;
+    }
+
 
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
@@ -40,7 +50,8 @@ export class RegisterComponent implements OnInit {
         this.submitted = true;
 
         // stop here if form is invalid
-        if (this.registerForm.invalid) {
+        if (this.registerForm.invalid || this.hasDuplicateSymbols(this.registerForm.controls.password.value)) {
+            this.alertService.error("Duplicate password");
             return;
         }
 
@@ -56,4 +67,6 @@ export class RegisterComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
+
 }

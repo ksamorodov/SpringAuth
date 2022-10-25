@@ -3,6 +3,8 @@
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        <a class="nav-item nav-link" *ngIf="currentUser.role === 'ADMIN'" (click)="addUser()">Add new user</a>
+<!--        <a class="nav-item nav-link" routerLink="/">О программе</a>-->
     </div>
 </nav>
 

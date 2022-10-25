@@ -13,4 +13,8 @@
         <sqlFile path="/sql/02_fio_in_table_user.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="2022-10-22 20:11:00" author="ksamorodov">
+        <sqlFile path="/sql/03_add_roles.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>

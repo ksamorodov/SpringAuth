@@ -11,7 +11,7 @@ import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row7;
+import org.jooq.Row10;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -81,6 +81,21 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
      * The column <code>public.auth_user.last_name</code>.
      */
     public final TableField<AuthUserRecord, String> LAST_NAME = createField(DSL.name("last_name"), SQLDataType.VARCHAR(50), this, "");
+
+    /**
+     * The column <code>public.auth_user.role</code>.
+     */
+    public final TableField<AuthUserRecord, String> ROLE = createField(DSL.name("role"), SQLDataType.VARCHAR(50).nullable(false), this, "");
+
+    /**
+     * The column <code>public.auth_user.blocked_at</code>.
+     */
+    public final TableField<AuthUserRecord, LocalDateTime> BLOCKED_AT = createField(DSL.name("blocked_at"), SQLDataType.LOCALDATETIME(6), this, "");
+
+    /**
+     * The column <code>public.auth_user.is_valid_password</code>.
+     */
+    public final TableField<AuthUserRecord, Boolean> IS_VALID_PASSWORD = createField(DSL.name("is_valid_password"), SQLDataType.BOOLEAN, this, "");
 
     private AuthUser(Name alias, Table<AuthUserRecord> aliased) {
         this(alias, aliased, null);
@@ -152,11 +167,11 @@ public class AuthUser extends TableImpl<AuthUserRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row7 type methods
+    // Row10 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row7<UUID, String, String, String, LocalDateTime, String, String> fieldsRow() {
-        return (Row7) super.fieldsRow();
+    public Row10<UUID, String, String, String, LocalDateTime, String, String, String, LocalDateTime, Boolean> fieldsRow() {
+        return (Row10) super.fieldsRow();
     }
 }
