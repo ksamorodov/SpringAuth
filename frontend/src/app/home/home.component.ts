@@ -140,7 +140,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.submitted = true;
 
         let oldPassword = this.registerForm.controls.oldPassword.value? this.registerForm.controls.oldPassword.value : "";
-        if (this.currentUser.temporaryPassword == false && this.selectedUser == this.currentUser.id) {
+        if (this.currentUser.temporaryPassword == false && this.selectedUser == this.currentUser) {
             this.authenticationService.checkLogin(oldPassword)
                 .pipe(first())
                 .subscribe(data => {

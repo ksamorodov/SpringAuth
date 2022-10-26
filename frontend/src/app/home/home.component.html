@@ -1,4 +1,4 @@
-<div *ngIf="currentUser && currentUser.temporaryPassword == false">
+<div *ngIf="currentUser && currentUser.temporaryPassword == false && isProgramEnd == false">
     <h1>Ваш логин: {{currentUser.username}}!</h1>
     <p>Вы вошли в систему</p>
     <h3 *ngIf="currentUser.role === 'ADMIN'">Список пользователей:</h3>
@@ -21,10 +21,10 @@
 
 </div>
 
-<div *ngIf="isPasswordChangerOpened || currentUser.temporaryPassword == true">
+<div *ngIf="isPasswordChangerOpened || currentUser.temporaryPassword == true && isProgramEnd == false">
     <h1 *ngIf="currentUser.temporaryPassword == true"> Необходимо сменить временный пароль! </h1>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="form-group" *ngIf="currentUser.temporaryPassword == false">
+        <div class="form-group" *ngIf="currentUser.temporaryPassword == false && currentUser == selectedUser">
             <label for="oldPassword" >Старый пароль</label>
             <input type="password" formControlName="oldPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.oldPassword.errors }" />
         </div>

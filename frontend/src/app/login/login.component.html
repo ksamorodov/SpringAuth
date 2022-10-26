@@ -1,4 +1,4 @@
-<h2 *ngIf="isBdDecrypted && isProgramEnd == false">Вход</h2>
+<h2 *ngIf="isBdDecrypted == true && isProgramEnd == false">Вход</h2>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="isBdDecrypted && isProgramEnd == false">
     <div class="form-group">
         <label for="username">Имя пользователя</label>
