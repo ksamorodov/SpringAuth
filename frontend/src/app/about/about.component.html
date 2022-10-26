@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isProgramEnd == false">
     <h1>О программе:</h1>
     <div>
         <span>
@@ -12,3 +12,6 @@
     </div>
 
 </div>
+
+<a class="nav-item nav-link" (click)="end()" *ngIf="isProgramEnd == false">Завершение программы</a>
+<h1 *ngIf="isProgramEnd">Программа завершена</h1>

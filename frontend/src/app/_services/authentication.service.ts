@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
-import { User } from '../_models';
+import {User} from '../_models';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({providedIn: 'root'})
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
@@ -21,6 +21,14 @@ export class AuthenticationService {
 
     setValidationPasswordEnabled(id, value) {
         return this.http.get<any>('/api/auth/set-validation-password?id=' + id + '&value=' + value);
+    }
+
+    end() {
+        return this.http.get<any>('/api/auth/end')
+    }
+
+    isEnd() {
+        return this.http.get<any>('/api/auth/is-end')
     }
 
     login(username: string, password: string) {
@@ -50,6 +58,19 @@ export class AuthenticationService {
                     }
                 )
             }));
+    }
+
+    decryptBd(password: string) {
+        return this.http.post<any>('/api/auth/decrypt-bd', password)
+            .pipe(map(() => {
+                this.loggedIn().subscribe(user => {
+                    }
+                )
+            }));
+    }
+
+    isPasswordDecrypted() {
+        return this.http.get<any>('/api/auth/is-bd-decrypted')
     }
 
     loggedIn() {

@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
 
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'login' }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);
