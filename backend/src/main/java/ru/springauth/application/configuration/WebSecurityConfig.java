@@ -68,6 +68,7 @@ public class WebSecurityConfig {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
 //            FileUtilService.test();
+            FileUtilService.decryptBd();
             List<UserPrincipal> read = FileUtilService.read();
             if (read.isEmpty()) {
                 String json = "[ {\n" +
@@ -82,11 +83,10 @@ public class WebSecurityConfig {
                         "  \"temporaryPassword\" : true\n" +
                         "} ]";
                 FileUtils.writeStringToFile(new File("decryptedBD.txt"), json, "UTF-8");
-                FileUtilService.cryptBd();
             } else {
                 userRepository.insertAllUsers(read);
-                FileUtilService.cryptBd();
             }
+            FileUtilService.cryptBd();
 
             http
                     .authorizeRequests()
