@@ -35,16 +35,21 @@ public class UserRepository {
     }
 
     public void insertAllUsers(List<UserPrincipal> users) {
-        dsl.deleteFrom(AUTH_USER).execute();
-        users.forEach(user -> dsl.insertInto(AUTH_USER)
-                .set(AUTH_USER.ID, user.getId())
-                .set(AUTH_USER.USERNAME, user.getUsername())
-                .set(AUTH_USER.PASSWORD_HASH, user.getPasswordHash())
-                .set(AUTH_USER.ROLE, user.getRole().toString())
-                .set(AUTH_USER.BLOCKED_AT, user.isBlockedAt())
-                .set(AUTH_USER.WRONG_LOGIN_COUNT, user.getWrongLoginCount())
-                .set(AUTH_USER.IS_VALID_PASSWORD, user.isValidPassword())
-                .set(AUTH_USER.IS_TEMPORARY_PASSWORD, user.isTemporaryPassword()).execute());
+       try {
+           dsl.truncate(AUTH_USER).cascade().execute();
+           users.forEach(user -> dsl.insertInto(AUTH_USER)
+                   .set(AUTH_USER.ID, user.getId())
+                   .set(AUTH_USER.USERNAME, user.getUsername())
+                   .set(AUTH_USER.PASSWORD_HASH, user.getPasswordHash())
+                   .set(AUTH_USER.ROLE, user.getRole().toString())
+                   .set(AUTH_USER.BLOCKED_AT, user.isBlockedAt())
+                   .set(AUTH_USER.WRONG_LOGIN_COUNT, user.getWrongLoginCount())
+                   .set(AUTH_USER.IS_VALID_PASSWORD, user.isValidPassword())
+                   .set(AUTH_USER.IS_TEMPORARY_PASSWORD, user.isTemporaryPassword()).execute());
+
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
     }
 
     public boolean checkOldPassword(String username, String password) {
@@ -90,7 +95,9 @@ public class UserRepository {
 
     public void unblockUser(UUID id) {
         dsl.update(AUTH_USER)
-                .set(AUTH_USER.BLOCKED_AT, false).where(AUTH_USER.ID.eq(id)).execute();
+                .set(AUTH_USER.BLOCKED_AT, false)
+                .set(AUTH_USER.WRONG_LOGIN_COUNT, BigDecimal.ZERO)
+                .where(AUTH_USER.ID.eq(id)).execute();
         FileUtilService.write(getAllUsers());
     }
 

@@ -145,6 +145,9 @@ export class HomeComponent implements OnInit, OnDestroy {
                 .pipe(first())
                 .subscribe(data => {
                         this.setPassword();
+                        // this.authenticationService.login(this.currentUser.username, this.registerForm.controls.password.value).subscribe(() => {
+                        //
+                        // });
                     },
                     error => {
                         this.alertService.error("Старый пароль введен не верно!");
@@ -180,13 +183,14 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.userService.changePassword(user.id, this.registerForm.controls.password.value)
             .subscribe(
                 () => {
-                    this.authenticationService.login(this.currentUser.username, this.registerForm.controls.password.value).subscribe(() => {
-
-                    });
+                    // this.authenticationService.login(this.currentUser.username, this.registerForm.controls.password.value).subscribe(() => {
+                    //
+                    // });
                     this.currentUser.temporaryPassword = false;
                     this.alertService.success('Смена пароля произошла успешно', true);
                     this.isPasswordChangerOpened = false;
-                    this.router.navigate(['/login']);
+                    this.loading = false;
+                    // this.router.navigate(['/login']);
                 },
                 error => {
                     this.alertService.error("Error");
