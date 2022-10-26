@@ -1,5 +1,5 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand navbar-dark bg-dark2">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/" *ngIf="currentUser">Домой</a>
         <a class="nav-item nav-link" (click)="logout()" *ngIf="currentUser">Выйти</a>
@@ -7,13 +7,13 @@
 
         <a class="nav-item nav-link" *ngIf="currentUser && currentUser.role === 'ADMIN' && currentUser.temporaryPassword == false"
            (click)="addUser()">Добавить нового пользователя</a>
-        <a class="nav-item nav-link" (click)="about()">О программе</a>
+        <a class="nav-item nav-link" (click)="about()" *ngIf="currentUser == null || currentUser.temporaryPassword == false">О программе</a>
 <!--        <a class="nav-item nav-link" (click)="end()">Завершение программы</a>-->
     </div>
 </nav>
 
 <!-- main app container -->
-<div class="jumbotron">
+<div class="jumbotron2">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 offset-sm-3">

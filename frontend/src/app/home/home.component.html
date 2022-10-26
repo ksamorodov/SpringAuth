@@ -1,7 +1,6 @@
 <div *ngIf="currentUser && currentUser.temporaryPassword == false && isProgramEnd == false">
-    <h1>Ваш логин: {{currentUser.username}}!</h1>
-    <p>Вы вошли в систему</p>
-    <h3 *ngIf="currentUser.role === 'ADMIN'">Список пользователей:</h3>
+    <h1>Ваш логин: {{currentUser.username}}</h1>
+    <b *ngIf="currentUser.role === 'ADMIN'">Список пользователей:</b>
     <ul *ngIf="currentUser.role === 'ADMIN'">
         <li *ngFor="let user of users">
             <a *ngIf="user.role === 'ADMIN'" class="text-warning"> {{user.username}} </a>
