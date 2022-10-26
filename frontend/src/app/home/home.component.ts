@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     registerForm: FormGroup;
     loading = false;
     submitted = false;
-
+    isProgramEnd: boolean;
     // enablePasswordValidation = false;
 
     constructor(
@@ -31,6 +31,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         private alertService: AlertService,
         private router: Router,
     ) {
+        this.authenticationService.isEnd().subscribe(data => {
+                this.isProgramEnd = false;
+            }, error => {
+                this.isProgramEnd = true;
+            }
+        )
         this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
             this.currentUser = user;
         });
@@ -62,14 +68,20 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     blockUser(id) {
         this.userService.block(id).pipe(first()).subscribe(() => {
-            this.alertService.success("User was blocked")
+            this.alertService.success("Пользователь заблокирован")
             this.loadAllUsers()
         });
     }
 
+    end() {
+        this.authenticationService.end().subscribe(data => {
+            this.isProgramEnd = true;
+        })
+    }
+
     unblockUser(id) {
         this.userService.unblock(id).pipe(first()).subscribe(() => {
-            this.alertService.success("User was unblocked")
+            this.alertService.success("Пользователь разблокирован")
             this.loadAllUsers()
         });
     }

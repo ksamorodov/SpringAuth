@@ -4,12 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import ru.ksamorodov.springauth.application.dao.Role;
 import ru.ksamorodov.springauth.application.dao.UserPrincipal;
 import ru.ksamorodov.springauth.application.repository.UserRepository;
 import ru.ksamorodov.springauth.application.service.FileUtilService;
 
+import javax.crypto.Cipher;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -19,6 +21,48 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AuthResource {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final String passwordHash = "$2a$10$xibZdN6wGLzvCDERz4vZ5OFuFwuYqNZXOVHCe08USUyEwsHIaSHVK";
+    private boolean isBdDecrypted = false;
+    private boolean isEnd = false;
+
+    @GetMapping("/is-bd-decrypted")
+    public ResponseEntity<?> isBdDecrypted() {
+        if (isBdDecrypted) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @GetMapping("/end")
+    public ResponseEntity<?> endProgramm() {
+        if (!isEnd) {
+            FileUtilService.cryptBd();
+        }
+        isEnd = true;
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/is-end")
+    public ResponseEntity<?> isEndProgram() {
+        if (!isEnd) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PostMapping("/decrypt-bd")
+    public ResponseEntity<?> decryptBd(@RequestBody Optional<String> password) {
+        if (password.isPresent() && passwordEncoder.matches(password.get(), this.passwordHash)) {
+            isBdDecrypted = true;
+            FileUtilService.decryptBd();
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 
     @GetMapping("/logged-in")
     public ResponseEntity<?> loggedIn(@AuthenticationPrincipal UserPrincipal principal) {
