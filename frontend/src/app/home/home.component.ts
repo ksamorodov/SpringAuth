@@ -111,17 +111,17 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     validatePassword(user: User, str) {
         if (user.validPassword) {
-            return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[A-Z])(?=.*[-.?!)(,:]).{1,32}$/.test(str)
+            return /(.).*\1/.test(str);
         } else {
-            return true;
+            return false;
         }
     }
 
     isValidationOfPasswordEnabled(isEnabled) {
         if (isEnabled) {
-            return "✅";
+            return " enabled";
         } else {
-            return "❌"
+            return " disabled"
         }
     }
 
@@ -170,12 +170,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
         if (this.registerForm.controls.password.value !== this.registerForm.controls.repeatPassword.value) {
-            this.alertService.error("Пароли не совпадают");
+            this.alertService.error("Passwords is not equal");
             return;
         }
 
         if (this.validatePassword(user, this.registerForm.controls.password.value) == false) {
-            this.alertService.error("Пароль должен содержать строчные и прописные буквы, а также знаки препинания");
+            this.alertService.error("Password should not repeat symbols");
             return;
         }
 
@@ -187,10 +187,11 @@ export class HomeComponent implements OnInit, OnDestroy {
                     //
                     // });
                     this.currentUser.temporaryPassword = false;
-                    this.alertService.success('Смена пароля произошла успешно', true);
+                    this.alertService.success('Password is changed', true);
                     this.isPasswordChangerOpened = false;
                     this.loading = false;
-                    // this.router.navigate(['/login']);
+                    this.authenticationService.logout();
+                    this.router.navigate(['/login']);
                 },
                 error => {
                     this.alertService.error("Error");

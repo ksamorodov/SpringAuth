@@ -1,10 +1,11 @@
-<h2>Добавление нового пользователя</h2>
+<a (click)="end()" *ngIf="isProgramEnd == false">exit</a>
+<h2>Add new user</h2>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label for="username">Имя пользователя</label>
+        <label for="username">Enter username</label>
         <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Имя пользователя - обязательное поле</div>
+            <div *ngIf="f.username.errors.required">username is required</div>
         </div>
     </div>
     <div class="form-group">
@@ -14,6 +15,4 @@
         </button>
     </div>
 </form>
-
-<a class="nav-item nav-link" (click)="end()" *ngIf="isProgramEnd == false">Завершение программы</a>
 <h1 *ngIf="isProgramEnd">Программа завершена</h1>

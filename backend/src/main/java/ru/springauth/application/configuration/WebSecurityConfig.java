@@ -68,14 +68,18 @@ public class WebSecurityConfig {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
 //            FileUtilService.test();
-            FileUtilService.decryptBd();
+            try {
+                FileUtilService.decryptBd();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             List<UserPrincipal> read = FileUtilService.read();
             if (read.isEmpty()) {
                 String json = "[ {\n" +
                         "  \"id\" : \"d81827e3-ff51-4419-bbad-950ab7d7e7fd\",\n" +
                         "  \"username\" : \"admin\",\n" +
                         "  \"password\" : null,\n" +
-                        "  \"passwordHash\" : \"$2a$10$qnfz5DIUih2sBDP8OxQXq.2/PCwUHVQ/0sLlCf7.EO1iSmTA0fuem\",\n" +
+                        "  \"passwordHash\" : \"$2a$10$xibZdN6wGLzvCDERz4vZ5OFuFwuYqNZXOVHCe08USUyEwsHIaSHVK\",\n" +
                         "  \"blockedAt\" : false,\n" +
                         "  \"wrongLoginCount\" : 0,\n" +
                         "  \"role\" : \"ADMIN\",\n" +

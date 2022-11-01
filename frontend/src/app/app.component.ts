@@ -24,6 +24,10 @@ export class AppComponent implements OnInit, OnDestroy{
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
+    home() {
+        this.router.navigate(['/home']);
+    }
+
     logout() {
         this.authenticationService.logout();
         this.router.navigate(['/login']);

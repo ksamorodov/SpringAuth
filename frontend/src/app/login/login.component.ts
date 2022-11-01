@@ -10,7 +10,6 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
-    returnUrl: string;
     isAuth: false;
 
     isBdDecrypted: boolean;
@@ -64,7 +63,6 @@ export class LoginComponent implements OnInit {
         });
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = '/';
     }
 
     // convenience getter for easy access to form fields
@@ -105,10 +103,11 @@ export class LoginComponent implements OnInit {
                 .subscribe(
                     data => {
                         this.loading = false;
-                        this.alertService.success("Вы вошли в аккаунт");
+                        this.alertService.success("Success");
+                        this.router.navigate(['/home'])
                     },
                     error => {
-                        this.alertService.error("Неправильный логин или пароль");
+                        this.alertService.error("Invalid login and password");
                         this.loading = false;
                     });
         });

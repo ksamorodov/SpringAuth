@@ -72,7 +72,7 @@ public class UserRepository {
         int execute = dsl.insertInto(AUTH_USER)
                 .set(AUTH_USER.ID, UUID.randomUUID())
                 .set(AUTH_USER.USERNAME, username)
-                .set(AUTH_USER.IS_VALID_PASSWORD, true)
+                .set(AUTH_USER.IS_VALID_PASSWORD, false)
                 .set(AUTH_USER.PASSWORD_HASH, passwordEncoder.encode(""))
                 .set(AUTH_USER.ROLE, Role.USER.toString()).execute();
 
