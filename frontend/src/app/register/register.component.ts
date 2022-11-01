@@ -62,10 +62,10 @@ export class RegisterComponent implements OnInit {
             .subscribe(
                 () => {
                     this.loading = false;
-                    this.alertService.success('Пользователь успешно добавлен', true);
+                    this.alertService.success('User successfully added', true);
                 },
                 error => {
-                    this.alertService.error("Имя пользователя уже занято");
+                    this.alertService.error("Username is already exists");
                     this.loading = false;
                 });
     }

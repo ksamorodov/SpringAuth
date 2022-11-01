@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'local_maven'
+    }
+
+    environment {
+        server='185.223.93.106'
+        rpmName='spring-auth-backend'
+        rpmArchivePath="${WORKSPACE}/spring_auth/backend/target/${rpmName}-0.0.1-${BUILD_NUMBER}.noarch.rpm"
+        yumRepo='/srv/repos/apps'
+        yumKeep=3
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                dir("spring_auth/backend") {
+                    sh "mvn -B -DskipTests clean package -Dbuild.number=${BUILD_NUMBER} -Dpackage.name=tmc-backend"
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir("spring_auth/backend") {
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                dir("spring_auth/backend") {
+                    sh '''
+                        scp "$rpmArchivePath" "$yumRepo"
+                        rm -f `repomanage --keep=${yumKeep} --old ${yumRepo}`
+                        createrepo -q "${yumRepo}";
+                        ssh root@${server} sudo yum clean all
+                        ssh root@${server} sudo yum -y install $rpmName
+                    '''
+                }
+            }
+        }
+    }
+}

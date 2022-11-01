@@ -1,16 +1,16 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<div class="sidenav">
     <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" *ngIf="currentUser">Домой</a>
-        <a class="nav-item nav-link" (click)="logout()" *ngIf="currentUser">Выйти</a>
-        <a class="nav-item nav-link" (click)="logout()" *ngIf="currentUser == null">Вход</a>
+        <a class="nav-item nav-link" (click)="home()" *ngIf="currentUser && currentUser.temporaryPassword == false">Account</a>
+        <a class="nav-item nav-link" (click)="logout()" *ngIf="currentUser && currentUser.temporaryPassword == false">Out</a>
+        <a class="nav-item nav-link" (click)="logout()" *ngIf="currentUser == null">Enter</a>
 
         <a class="nav-item nav-link" *ngIf="currentUser && currentUser.role === 'ADMIN' && currentUser.temporaryPassword == false"
-           (click)="addUser()">Добавить нового пользователя</a>
-        <a class="nav-item nav-link" (click)="about()">О программе</a>
-<!--        <a class="nav-item nav-link" (click)="end()">Завершение программы</a>-->
+           (click)="addUser()">Add new user</a>
+        <a class="nav-item nav-link" (click)="about()" *ngIf="currentUser == null || currentUser.temporaryPassword == false">About</a>
+<!--        <a class="nav-item nav-link" (click)="end()">exit</a>-->
     </div>
-</nav>
+</div>
 
 <!-- main app container -->
 <div class="jumbotron">

@@ -4,14 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService, AuthenticationService } from '../_services';
-import {error} from "protractor";
 
 @Component({templateUrl: 'login.component.html'})
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
-    returnUrl: string;
     isAuth: false;
 
     isBdDecrypted: boolean;
@@ -28,21 +26,18 @@ export class LoginComponent implements OnInit {
     ) {
         this.authenticationService.isEnd().subscribe(data => {
                 this.isProgramEnd = false;
+                this.authenticationService.isPasswordDecrypted().subscribe(data => {
+                    this.isBdDecrypted = true;
+                    this.isProgramEnd = false;
+                }, error => {
+                    this.isProgramEnd = false;
+                    this.isBdDecrypted = false;
+                });
             }, error => {
                 this.isProgramEnd = true;
             }
         )
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
-            this.router.navigate(['/']);
-        }
-        this.authenticationService.isPasswordDecrypted().subscribe(data => {
-            this.isBdDecrypted = true;
-            this.isProgramEnd = false;
-        }, error => {
-            this.isProgramEnd = false;
-            this.isBdDecrypted = false;
-        });
     }
 
     end() {
@@ -57,7 +52,7 @@ export class LoginComponent implements OnInit {
         }, error => {
             this.isProgramEnd = true;
         })
-        this.isBdDecrypted = false;
+        // this.isBdDecrypted = false;
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', []]
@@ -68,7 +63,6 @@ export class LoginComponent implements OnInit {
         });
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = '/home';
     }
 
     // convenience getter for easy access to form fields
@@ -109,10 +103,11 @@ export class LoginComponent implements OnInit {
                 .subscribe(
                     data => {
                         this.loading = false;
-                        this.alertService.success("Вы вошли в аккаунт");
+                        this.alertService.success("Success");
+                        this.router.navigate(['/home'])
                     },
                     error => {
-                        this.alertService.error("Неправильный логин или пароль");
+                        this.alertService.error("Invalid login and password");
                         this.loading = false;
                     });
         });

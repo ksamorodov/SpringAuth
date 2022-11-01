@@ -5,7 +5,9 @@ import { AuthenticationService } from './_services';
 import { User } from './_models';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
-@Component({ selector: 'app', templateUrl: 'app.component.html' })
+@Component({ selector: 'app',
+    styleUrls: ['app.component.css'],
+    templateUrl: 'app.component.html' })
 export class AppComponent implements OnInit, OnDestroy{
     currentUser: User;
 
@@ -20,6 +22,10 @@ export class AppComponent implements OnInit, OnDestroy{
         private authenticationService: AuthenticationService
     ) {
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    }
+
+    home() {
+        this.router.navigate(['/home']);
     }
 
     logout() {

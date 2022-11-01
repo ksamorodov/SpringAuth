@@ -26,9 +26,9 @@
 2022-10-21 00:11:57.875 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:12:11.302 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 66113 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 66113 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:12:11.306 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:12:13.221 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:12:13.222 [INFO] [main]
@@ -52,7 +52,7 @@
 2022-10-21 00:12:16.628 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:12:16.666 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.226 seconds (JVM running for 8.969)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.226 seconds (JVM running for 8.969)
 2022-10-21 00:12:28.517 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:12:28.804 [INFO] [http-nio-8080-exec-1]
@@ -81,9 +81,9 @@
 2022-10-21 00:17:47.192 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:17:54.189 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67110 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67110 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:17:54.195 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:17:56.060 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:17:56.061 [INFO] [main]
@@ -107,15 +107,15 @@
 2022-10-21 00:17:59.706 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:17:59.741 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.143 seconds (JVM running for 7.623)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.143 seconds (JVM running for 7.623)
 2022-10-21 00:18:16.642 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
 2022-10-21 00:18:16.648 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:18:23.543 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67152 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67152 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:18:23.549 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:18:25.792 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:18:25.793 [INFO] [main]
@@ -139,15 +139,15 @@
 2022-10-21 00:18:29.169 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:18:29.205 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.431 seconds (JVM running for 7.819)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.431 seconds (JVM running for 7.819)
 2022-10-21 00:18:35.811 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:350] HikariPool-1 - Shutdown initiated...
 2022-10-21 00:18:35.815 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:18:42.271 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67177 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67177 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:18:42.283 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:18:43.796 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:18:43.797 [INFO] [main]
@@ -171,7 +171,7 @@
 2022-10-21 00:18:47.097 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:18:47.132 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.467 seconds (JVM running for 6.778)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.467 seconds (JVM running for 6.778)
 2022-10-21 00:19:00.115 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:19:00.411 [INFO] [http-nio-8080-exec-1]
@@ -200,9 +200,9 @@
 2022-10-21 00:22:31.876 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:22:39.277 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67446 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67446 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:22:39.282 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:22:40.780 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:22:40.781 [INFO] [main]
@@ -226,7 +226,7 @@
 2022-10-21 00:22:44.700 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:22:44.730 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.036 seconds (JVM running for 6.988)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.036 seconds (JVM running for 6.988)
 2022-10-21 00:23:37.032 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:23:37.352 [INFO] [http-nio-8080-exec-1]
@@ -251,8 +251,8 @@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.14.16
                                       
 2022-10-21 00:23:38.316 [ERROR] [http-nio-8080-exec-3]
-				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class ru.ksamorodov.springauth.application.dao.UserPrincipal$Authority]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class ru.ksamorodov.springauth.application.dao.UserPrincipal$Authority and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: ru.ksamorodov.springauth.application.dao.UserPrincipal["authority"])] with root cause
-com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class ru.ksamorodov.springauth.application.dao.UserPrincipal$Authority and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: ru.ksamorodov.springauth.application.dao.UserPrincipal["authority"])
+				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet]:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class dao.application.ru.springauth.UserPrincipal$Authority]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class dao.application.ru.springauth.UserPrincipal$Authority and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: dao.application.ru.springauth.UserPrincipal["authority"])] with root cause
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class dao.application.ru.springauth.UserPrincipal$Authority and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: dao.application.ru.springauth.UserPrincipal["authority"])
 	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
 	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1300)
 	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
@@ -366,9 +366,9 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:24:08.906 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:24:15.235 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67497 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67497 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:24:15.240 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:24:16.799 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:24:16.800 [INFO] [main]
@@ -392,7 +392,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:24:21.008 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:24:21.039 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.371 seconds (JVM running for 7.282)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 6.371 seconds (JVM running for 7.282)
 2022-10-21 00:24:38.883 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:24:39.166 [INFO] [http-nio-8080-exec-1]
@@ -421,9 +421,9 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:29:37.396 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:29:44.643 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67651 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67651 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:29:44.647 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:29:46.185 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:29:46.186 [INFO] [main]
@@ -447,7 +447,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:29:49.478 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:29:49.506 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.496 seconds (JVM running for 6.408)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.496 seconds (JVM running for 6.408)
 2022-10-21 00:30:00.187 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:30:00.476 [INFO] [http-nio-8080-exec-1]
@@ -476,9 +476,9 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:33:16.461 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:33:22.392 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67801 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 67801 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:33:22.401 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:33:24.011 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:33:24.012 [INFO] [main]
@@ -502,7 +502,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:33:27.232 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:33:27.264 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.511 seconds (JVM running for 6.453)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.511 seconds (JVM running for 6.453)
 2022-10-21 00:33:30.991 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:33:38.012 [INFO] [http-nio-8080-exec-2]
@@ -531,9 +531,9 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:41:58.142 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:42:04.611 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 68114 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 68114 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:42:04.622 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:42:06.983 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:42:06.984 [INFO] [main]
@@ -557,7 +557,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:42:10.291 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:42:10.326 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 7.039 seconds (JVM running for 8.743)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 7.039 seconds (JVM running for 8.743)
 2022-10-21 00:42:13.706 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:42:13.977 [INFO] [http-nio-8080-exec-1]
@@ -586,9 +586,9 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:43:11.137 [INFO] [SpringApplicationShutdownHook]
 				[com.zaxxer.hikari.HikariDataSource:352] HikariPool-1 - Shutdown completed.
 2022-10-21 00:43:16.410 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 68159 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
+				[ru.springauth.SpringAuthApplication:55] Starting SpringAuthApplication using Java 17 on MacBook-Air-Kirill.local with PID 68159 (/Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth/target/classes started by ksamorodov in /Users/ksamorodov/IdeaProjects/spring-security-oauth/SpringAuth)
 2022-10-21 00:43:16.417 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
+				[ru.springauth.SpringAuthApplication:634] No active profile set, falling back to 1 default profile: "default"
 2022-10-21 00:43:18.054 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Initializing ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:43:18.055 [INFO] [main]
@@ -612,7 +612,7 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2022-10-21 00:43:21.421 [INFO] [main]
 				[org.apache.coyote.http11.Http11NioProtocol:173] Starting ProtocolHandler ["http-nio-8080"]
 2022-10-21 00:43:21.450 [INFO] [main]
-				[ru.ksamorodov.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.81 seconds (JVM running for 7.525)
+				[ru.springauth.SpringAuthApplication:61] Started SpringAuthApplication in 5.81 seconds (JVM running for 7.525)
 2022-10-21 00:43:32.780 [INFO] [http-nio-8080-exec-1]
 				[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-10-21 00:43:33.057 [INFO] [http-nio-8080-exec-1]
