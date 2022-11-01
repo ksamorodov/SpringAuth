@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'local_maven'
+        maven 'Maven'
     }
 
     environment {
