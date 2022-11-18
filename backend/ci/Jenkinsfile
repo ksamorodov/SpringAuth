@@ -17,7 +17,8 @@ pipeline {
         stage('Build') {
             steps {
                 dir("spring_auth/backend") {
-                    sh "mvn -B -DskipTests clean package -Dbuild.number=${BUILD_NUMBER} -Dpackage.name=tmc-backend"
+                    sh "docker-compose up"
+                    sh "mvn -B -DskipTests clean package -Dbuild.number=${BUILD_NUMBER} -Dpackage.name=spring_auth"
                 }
             }
         }
